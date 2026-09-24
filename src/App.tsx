@@ -145,27 +145,32 @@ const About = () => (
         <span className="text-xs uppercase tracking-widest font-bold text-brand-black/40">Who we are</span>
         <h2 className="text-6xl md:text-8xl font-display font-bold tracking-tighter mt-4 mb-8">Riding the Wave</h2>
         <p className="text-xl font-light leading-relaxed text-brand-black/70 mb-8">
-          PADO is more than just a studio; we are a collective of digital surfers navigating the ever-changing tides of technology. Founded in Seoul, we've spent years perfecting the balance between artistic expression and technical excellence.
+          PADO is a studio based in Seoul. We build and operate our own products, and we take on
+          game and web development work for clients. Our focus is the balance between artistic
+          expression and technical excellence.
         </p>
         <div className="grid grid-cols-2 gap-12">
           <div>
-            <h4 className="text-4xl font-display font-bold text-brand-accent">12+</h4>
-            <p className="text-xs uppercase tracking-widest font-bold text-brand-black/40 mt-2">Games Launched</p>
+            <h4 className="text-4xl font-display font-bold text-brand-accent">Seoul</h4>
+            <p className="text-xs uppercase tracking-widest font-bold text-brand-black/40 mt-2">Where we are</p>
           </div>
           <div>
-            <h4 className="text-4xl font-display font-bold text-brand-accent">50+</h4>
-            <p className="text-xs uppercase tracking-widest font-bold text-brand-black/40 mt-2">Web Solutions</p>
+            <h4 className="text-4xl font-display font-bold text-brand-accent">Games &amp; Web</h4>
+            <p className="text-xs uppercase tracking-widest font-bold text-brand-black/40 mt-2">What we build</p>
           </div>
         </div>
       </div>
       <div className="relative">
-        <div className="aspect-square bg-brand-black overflow-hidden rounded-2xl">
-          <img 
-            src="https://picsum.photos/seed/studio/1000/1000" 
-            alt="Studio Life" 
-            className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700"
-            referrerPolicy="no-referrer"
-          />
+        <div className="aspect-square bg-brand-black rounded-2xl relative overflow-hidden flex items-center justify-center">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-brand-accent)_0%,_transparent_70%)] opacity-20 blur-3xl" />
+          <div className="relative text-center">
+            <div className="text-brand-white font-display font-bold tracking-tighter text-7xl md:text-8xl leading-none">
+              PADO
+            </div>
+            <div className="text-brand-white/40 text-xs uppercase tracking-[0.3em] font-bold mt-4">
+              파도 · Studio
+            </div>
+          </div>
         </div>
         <div className="absolute -bottom-6 -left-6 bg-brand-accent p-8 rounded-xl hidden md:block">
           <p className="text-brand-black font-display font-bold text-2xl leading-tight">
@@ -212,59 +217,62 @@ const Process = () => {
   );
 };
 
-const Projects = () => {
-  const projects = [
-    { title: "Janggi 365", category: "Game Service", image: "https://picsum.photos/seed/janggi/800/600", url: "https://www.janggi365.com/" },
-    { title: "Neon Drift", category: "Game", image: "https://picsum.photos/seed/game1/800/600" },
-    { title: "Cyber Quest", category: "Game", image: "https://picsum.photos/seed/game2/800/600" },
-    { title: "E-Commerce OS", category: "Web Service", image: "https://picsum.photos/seed/web2/800/600" },
-  ];
+const Projects = () => (
+  <section id="projects" className="py-24 px-6 md:px-12 bg-brand-black text-brand-white">
+    <div className="mb-16">
+      <span className="text-xs uppercase tracking-widest font-bold text-white/40">Our Product</span>
+      <h2 className="text-6xl md:text-8xl font-display font-bold tracking-tighter mt-4">Projects</h2>
+    </div>
 
-  return (
-    <section id="projects" className="py-24 px-6 md:px-12 bg-brand-black text-brand-white">
-      <div className="flex justify-between items-end mb-16">
-        <div>
-          <span className="text-xs uppercase tracking-widest font-bold text-white/40">Selected Works</span>
-          <h2 className="text-6xl md:text-8xl font-display font-bold tracking-tighter mt-4">Projects</h2>
+    <motion.a
+      href="https://www.janggi365.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="group block border border-white/10 hover:border-brand-accent/50 transition-colors"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="p-10 md:p-16 flex flex-col justify-between">
+          <div>
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="text-[10px] uppercase tracking-widest font-bold text-white/40">Game Service</span>
+              <span className="text-[10px] uppercase tracking-widest font-bold text-brand-accent border border-brand-accent/40 px-2 py-1 rounded">
+                Live Beta
+              </span>
+            </div>
+            <h3 className="text-4xl md:text-5xl font-display font-bold tracking-tighter mb-6">Janggi 365</h3>
+            <p className="text-white/60 font-light leading-relaxed mb-8">
+              An online Janggi (Korean chess) service that we build and operate ourselves. Real-time
+              matches against other players, instant rematches, and post-game review — open every day
+              of the year.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {["Real-time Multiplayer", "Web", "Game Review"].map(tag => (
+                <span key={tag} className="text-[10px] uppercase tracking-wider font-bold border border-white/15 px-2 py-1 rounded">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex items-center gap-2 mt-12 text-brand-accent uppercase tracking-widest text-xs font-bold">
+            janggi365.com
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </div>
         </div>
-        <button className="hidden md:flex items-center gap-2 text-brand-accent uppercase tracking-widest text-sm font-bold group">
-          View All <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-        </button>
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {projects.map((project, i) => (
-          <motion.div 
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="group cursor-pointer"
-            onClick={() => project.url && window.open(project.url, '_blank')}
-          >
-            <div className="aspect-[4/3] overflow-hidden bg-white/5 mb-6">
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="flex justify-between items-center">
-              <div>
-                <span className="text-[10px] uppercase tracking-widest font-bold text-white/40">{project.category}</span>
-                <h3 className="text-2xl font-display font-bold mt-1">{project.title}</h3>
-              </div>
-              <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent group-hover:text-brand-black transition-all">
-                <ArrowUpRight className="w-5 h-5" />
-              </div>
-            </div>
-          </motion.div>
-        ))}
+        <div className="relative min-h-[260px] lg:min-h-[420px] border-t lg:border-t-0 lg:border-l border-white/10 flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-brand-accent)_0%,_transparent_70%)] opacity-15 blur-2xl" />
+          <div className="relative text-center leading-none">
+            <div className="font-display font-bold tracking-tighter text-7xl md:text-8xl">장기</div>
+            <div className="font-display font-bold tracking-tighter text-7xl md:text-8xl text-brand-accent">365</div>
+          </div>
+        </div>
       </div>
-    </section>
-  );
-};
+    </motion.a>
+  </section>
+);
 
 const Footer = () => (
   <footer id="contact" className="bg-brand-white pt-24 pb-12 px-6 md:px-12 border-t border-brand-black/10">
