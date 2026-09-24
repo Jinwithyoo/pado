@@ -273,6 +273,17 @@ const Footer = () => (
         <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-12">
           Let's create something <span className="text-stroke text-brand-black">extraordinary</span> together.
         </h2>
+        <h4 className="text-xs uppercase tracking-widest font-bold text-brand-black/40 mb-4">Get in touch</h4>
+        <a
+          href="mailto:pado.wave.dev@gmail.com"
+          className="inline-flex items-center gap-3 text-xl md:text-2xl font-display font-bold tracking-tight hover:text-brand-accent transition-colors"
+        >
+          <Mail className="w-6 h-6" />
+          pado.wave.dev@gmail.com
+        </a>
+        <p className="mt-4 text-sm font-light text-brand-black/50">
+          For support and billing enquiries, we reply within 2 business days.
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -300,8 +311,8 @@ const Footer = () => (
         © 2026 PADO STUDIO. ALL RIGHTS RESERVED.
       </p>
       <div className="flex gap-8 text-[10px] uppercase tracking-widest font-bold">
-        <a href="#" className="hover:text-brand-accent">Privacy Policy</a>
-        <a href="#" className="hover:text-brand-accent">Terms of Service</a>
+        <a href="/privacy.html" className="hover:text-brand-accent">Privacy Policy</a>
+        <a href="/terms.html" className="hover:text-brand-accent">Terms of Service</a>
       </div>
     </div>
   </footer>
