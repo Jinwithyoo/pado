@@ -283,11 +283,11 @@ const Footer = () => (
         </h2>
         <h4 className="text-xs uppercase tracking-widest font-bold text-brand-black/40 mb-4">Get in touch</h4>
         <a
-          href="mailto:pado.wave.dev@gmail.com"
+          href="mailto:pado.apps@gmail.com"
           className="inline-flex items-center gap-3 text-xl md:text-2xl font-display font-bold tracking-tight hover:text-brand-accent transition-colors"
         >
           <Mail className="w-6 h-6" />
-          pado.wave.dev@gmail.com
+          pado.apps@gmail.com
         </a>
         <p className="mt-4 text-sm font-light text-brand-black/50">
           For support and billing enquiries, we reply within 2 business days.
